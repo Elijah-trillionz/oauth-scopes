@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  padding: 0 20px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f4f4f4;
+  background-color: #151618;
+}
+.menu-hamburger {
+  padding: 4px;
+  display: flex;
+  cursor: pointer;
+}
+.menu-hamburger .line {
+  margin: 4px;
+  height: 40px;
+  width: 3px;
+  background-color: #ccc;
+  transform: rotate(4deg);
+}
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #f4f4f4;
+  padding: 20px 15px;
+  width: 300px;
+  transform: translateX(110%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 2;
+}
+nav.active {
+  transform: translateX(0);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+nav li a:hover {
+  background-color: #ccc;
+}
+.ads {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+.ads h2,
+.ads-home h2 {
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+  color: #333;
+}
+.body-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+}
+.body-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oswald', sans-serif;
+}
+main h2,
+main h3,
+main h4 {
+  padding: 10px 5px;
+}
+p,
+a,
+span,
+.child-scope {
+  font-family: 'Montserrat', sans-serif;
+}
+main {
+  display: grid;
+  grid-template-columns: auto 400px;
+}
+.content {
+  padding: 10px 14px;
+}
+.content p {
+  line-height: 1.6;
+  font-weight: 500;
+}
+.generator {
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 6px;
+}
+.generator ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+}
+.generator ul.google {
+  grid-template-columns: 1fr;
+}
+.generator li {
+  margin-right: 20px;
+  padding: 5px 0;
+}
+.parent-scope .input {
+  font-weight: 700;
+}
+.scope {
+  display: flex;
+  /* align-items: center; */
+}
+.tooltip {
+  position: relative;
+}
+.tooltip i {
+  padding-left: 4px;
+  font-size: 14px;
+}
+.tooltip-text {
+  position: absolute;
+  bottom: 120%;
+  left: -100%;
+  background-color: #000;
+  color: #f4f4f4;
+  padding: 4px 10px;
+  border-radius: 7px;
+  opacity: 0;
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+}
+.tooltip-text::after {
+  content: '';
+  display: block;
+  border: 10px solid;
+  border-color: #000 transparent transparent transparent;
+  position: absolute;
+  left: 20px;
+}
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+  max-height: 100px;
+  width: 400px;
+  max-width: 400px;
+  overflow: visible;
+}
+.tooltip-text p {
+  font-size: 14px;
+}
+.link {
+  margin: 20px 0;
+  position: relative;
+  height: 50px;
+}
+#link-input {
+  height: 50px;
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 2px solid#000;
+  border-radius: 4px;
+  padding: 3px 50px 0px 120px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: text;
+  color: #000;
+}
+.link p {
+  position: absolute;
+  height: inherit;
+  right: 0;
+  top: 0;
+  bottom: 5px;
+  width: 40px;
+  background-color: #1e3053;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link p i {
+  color: #f4f4f4;
+  font-size: 25px;
+  cursor: pointer;
+}
+.link p.link-title {
+  left: 0;
+  width: 100px;
+  color: #fff;
+  border-radius: 4px 0 0 4px;
+}
+.sidebar {
+  padding: 10px;
+  border-left: 2px solid #ccc;
+}
+.sidebar iframe {
+  height: 80vh;
+  width: 380px;
+}
+.sidebar .social {
+  text-align: center;
+}
+.sidebar a {
+  color: #000;
+  text-decoration: none;
+}
+.sidebar img {
+  width: 370px;
+}
+.sidebar i {
+  font-size: 30px;
+  color: #333;
+  transition: opacity 0.3s ease-in-out;
+  margin-right: 10px;
+}
+.sidebar i:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 1150px) {
+  .generator ul {
+    grid-template-columns: 1fr 1fr;
+  }
+  main {
+    grid-template-columns: 1fr;
+  }
+  .sidebar iframe,
+  .sidebar img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .generator ul {
+    grid-template-columns: 1fr;
+  }
+}
